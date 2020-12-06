@@ -108,9 +108,10 @@ function megfordít() {
       elozoSzam = back[index].dataset.number;
     }
     if (megtaláltPár == 1) {
-      back.forEach((sajt) => sajt.dataset.number = " ")
+      back.forEach((sajt) => sajt.dataset.number = "")
       gameOn = false;
       megtaláltPár = 0;
+      megfordítottKártya = 0;
       setTimeout(endOfTheGame, 1000)
     }
   }))
@@ -137,15 +138,10 @@ function startTheGame() {
   console.log(nullaKilenc)
   card.forEach((item) => item.addEventListener('click', function () {
     if (!gameOn) {
-
-
       gameOn = true;
-
       givePicturesToCards();
       megfordít();
       startTimer();
-
-
     }
   }))
 };
